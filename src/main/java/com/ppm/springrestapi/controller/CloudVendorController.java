@@ -27,26 +27,26 @@ public class CloudVendorController {
 
   @GetMapping
   public List<CloudVendor> getAll() {
-    return this.cloudVendorService.getAll();
+    return cloudVendorService.getAll();
   }
 
   @GetMapping("/{id}")
   public CloudVendor getById(@PathVariable("id") UUID id) {
-    return this.cloudVendorService.getById(id);
+    return cloudVendorService.getById(id);
   }
 
   @PostMapping
   public CloudVendor create(@RequestBody CloudVendorCreate cloudVendor) {
-    return this.cloudVendorService.create(cloudVendor);
+    return cloudVendorService.create(cloudVendor);
   }
 
   @PutMapping("/{id}")
   public CloudVendor update(@PathVariable("id") UUID id, @RequestBody CloudVendorCreate cloudVendor) {
-    return this.cloudVendorService.update(id, cloudVendor);
+    return cloudVendorService.update(id, cloudVendor);
   }
 
   @DeleteMapping("/{id}")
   public String delete(@PathVariable("id") UUID id) {
-    return this.cloudVendorService.delete(id);
+    return cloudVendorService.delete(id);
   }
 }
