@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ppm.springrestapi.dto.CloudVendor.CloudVendorCreate;
 import com.ppm.springrestapi.model.CloudVendor;
-import com.ppm.springrestapi.service.interfaces.ICloudVendorService;
+import com.ppm.springrestapi.service.interfaces.CloudVendorService;
 
 @RestController
 @RequestMapping("/cloud-vendor")
 public class CloudVendorController {
 
-  ICloudVendorService cloudVendorService;
+  CloudVendorService cloudVendorService;
 
-  public CloudVendorController(ICloudVendorService cloudVendorService) {
+  public CloudVendorController(CloudVendorService cloudVendorService) {
     this.cloudVendorService = cloudVendorService;
   }
 

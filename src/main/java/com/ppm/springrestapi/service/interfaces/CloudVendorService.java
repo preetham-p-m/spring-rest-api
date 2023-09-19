@@ -5,7 +5,7 @@ import com.ppm.springrestapi.model.CloudVendor;
 import java.util.List;
 import java.util.UUID;
 
-public interface ICloudVendorService {
+public interface CloudVendorService {
   public List<CloudVendor> getAll();
 
   public CloudVendor getById(UUID id);
