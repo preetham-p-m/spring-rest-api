@@ -2,6 +2,8 @@ package com.ppm.springrestapi.controller;
 
 import java.util.*;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ppm.springrestapi.dto.CloudVendor.CloudVendorCreate;
 import com.ppm.springrestapi.model.CloudVendor;
+import com.ppm.springrestapi.response.Response;
 import com.ppm.springrestapi.service.interfaces.CloudVendorService;
 
 @RestController
@@ -26,18 +29,19 @@ public class CloudVendorController {
   }
 
   @GetMapping
-  public List<CloudVendor> getAll() {
-    return cloudVendorService.getAll();
+  public ResponseEntity<Object> getAll() {
+    return Response.build("Requested Vendor detail is given here", HttpStatus.OK, cloudVendorService.getAll());
   }
 
   @GetMapping("/{id}")
-  public CloudVendor getById(@PathVariable("id") UUID id) {
-    return cloudVendorService.getById(id);
+  public ResponseEntity<Object> getById(@PathVariable("id") UUID id) {
+    return Response.build("Requested Vendor detail is given here", HttpStatus.OK, cloudVendorService.getById(id));
   }
 
   @PostMapping
-  public CloudVendor create(@RequestBody CloudVendorCreate cloudVendor) {
-    return cloudVendorService.create(cloudVendor);
+  public ResponseEntity<Object> create(@RequestBody CloudVendorCreate cloudVendor) {
+    return Response.build("Requested Vendor detail is given here", HttpStatus.OK,
+        cloudVendorService.create(cloudVendor));
   }
 
   @PutMapping("/{id}")

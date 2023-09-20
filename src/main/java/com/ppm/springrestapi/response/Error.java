@@ -1,13 +1,13 @@
-package com.ppm.springrestapi.exception;
+package com.ppm.springrestapi.response;
 
 import org.springframework.http.HttpStatus;
 
-public class BusinessException {
+public class Error {
     public final String message;
     public final Throwable throwable;
     public final HttpStatus httpStatus;
 
-    public BusinessException(String message, Throwable throwable, HttpStatus httpStatus) {
+    public Error(String message, Throwable throwable, HttpStatus httpStatus) {
         this.message = message;
         this.throwable = throwable;
         this.httpStatus = httpStatus;
